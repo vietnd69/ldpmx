@@ -1,0 +1,334 @@
+/* setup */
+* {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+} 
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+.row-nmg {
+    margin-left: 0;
+    margin-right: 0;
+}
+.no-pd {
+    padding-left: 0;
+    padding-right: 0;
+}
+/* end setup */
+body {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../img/bg.png);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+}
+body::before {
+    content: "";
+    display: block;
+    background-image: url(../img/top.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 333px;
+    height: 254px;
+    position: absolute;
+    top: 0;
+    left: 0;;
+}
+body::after {
+    content: "";
+    display: block;
+    background-image: url(../img/down.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 791px;
+    height: 420px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.box {
+    padding: 0 7%;
+    width: 100%;
+}
+.moon {
+    position: absolute;
+    left: -5%;
+    top: 50%
+}
+ul.item {
+    padding: 0;
+    margin-bottom: 0;
+    justify-content: center;
+}
+ul.item li {
+    list-style-type: none;
+    margin: 8px;
+    padding: 0;
+    transition: 0.2s ease;
+    cursor: pointer;
+    position: relative;
+}
+ul.item li:hover img {
+    filter: brightness(1.2);
+    transition: 0.2s ease
+}
+ul.item li.active img {
+    filter: brightness(0.8)
+}
+
+nav.col-12 {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 200;
+}
+.main {
+    height: 85%;
+    position: relative;
+    z-index: 100;
+    top: -5%
+}
+.b-g {
+    width: calc(550px * 1);
+    height: calc(550px * 1);
+    border-radius: 50%;
+    background-color: #ed1c24;
+    position: relative;
+}
+.b-g form {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 120;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.b-g form.form1 {
+    flex-direction: column;
+}
+.b-g form .form-group {
+    flex: 0;
+}
+.form-box {
+    margin-right: 5%
+}
+.form-box img.roww {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(0deg);
+    width: 116%;
+    height: auto;
+}
+.form-box img.roww.r1 {
+    animation: ani 40s linear infinite;
+}
+.form-box img.roww.r2 {
+    animation: anib 60s linear infinite;
+}
+@keyframes ani {
+    0% {
+        transform: translate(-50%,-50%) rotate(0deg)
+    }
+    0% {
+        transform: translate(-50%,-50%) rotate(360deg)
+    }
+}
+@keyframes anib {
+    0% {
+        transform: translate(-50%,-50%) rotate(0deg)
+    }
+    0% {
+        transform: translate(-50%,-50%) rotate(-360deg)
+    }
+}
+.eclip {
+    width: 13%;
+    height: 13%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #f8c447;
+    border-radius: 50%;
+    margin: auto;
+    animation: anic 40s linear infinite;
+}
+@keyframes anic {
+    0% {
+        transform: rotate(0deg)
+        translate(500%)
+        rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg)
+        translate(500%)
+        rotate(-360deg);
+    }
+}
+.eclip.active {
+    width: 35%;
+    height: 35%;
+    animation: anica 45s linear infinite;
+    z-index: -1;
+    transition: 0.7s ease
+}
+@keyframes anica {
+    0% {
+        transform: rotate(0deg)
+        translate(135%)
+        rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg)
+        translate(135%)
+        rotate(360deg);
+    }
+}
+.tem {
+    position: absolute;
+    bottom: 0;
+    right: -20%;
+    width: 100%;
+    height: auto;
+}
+.tem1 {
+    position: absolute;
+    top: 14%;
+    left: -12%;
+    animation: anid 5s linear infinite;
+    width: 50%;
+    height: auto;
+}
+@keyframes anid {
+    0% {
+        left: -12%;
+    }
+    50% {
+        left: -9%;
+    }
+    100% {
+        left: -12%;
+    }
+}
+.tem2 {
+    position: absolute;
+    bottom: -14%;
+    left: -20%;
+    animation: anie 10s linear infinite;
+    width: 135%;
+    height: auto;
+}
+@keyframes anie {
+    0% {
+        left: -20%;
+    }
+    50% {
+        left: -27%;
+    }
+    100% {
+        left: -20%;
+    }
+}
+.line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 100;
+}
+.btn {
+    background-color: #f8c447;
+    font-weight: 600;
+    padding: 8px 30px
+}
+.form-box label {
+    font-weight: 600;
+    color: aliceblue;
+    width: 100%;
+    text-align: center
+}
+.form-box h3 {
+    color: #f8c447;
+    margin-bottom: 25px;
+    text-align: center;
+}
+.b-g form.form1 , .b-g form.form2, .b-g form.form3 {
+    opacity: 0;
+    display: none;
+}
+.b-g form.form1.active , .b-g form.form2.active, .b-g form.form3.active {
+    opacity: 1;
+    transform: translateY(0);
+    animation: show 0.2s ease;
+    display: flex
+}
+.it {
+    z-index: 1;
+}
+.tem.hide, .tem1.hide, .tem2.hide {
+    opacity: 0;
+    animation: hiden 0.3s ease;
+    transform: scale(2);
+    display: none
+}
+@keyframes hiden {
+    0% {
+        opacity: 1;
+        transform: scale(1)
+    }
+    100% {
+        opacity: 0;
+        transform: scale(2)
+    }
+}
+@keyframes show {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px)
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+.form-box.hide {
+    opacity: 0;
+    animation: hiden 0.3s ease;
+    transform: scale(2)
+}
+.nd {
+    position: fixed;
+    width: 50vw;
+    height: 100%;
+    top: 100vh;
+    right: 0;
+    bottom: 0;
+    background-image: url("../img/bg2.png");
+    background-size: auto;
+    background-position: center;
+    transition: 0.5s ease;
+    padding: 3% 0;
+    z-index: 1000;
+}
+.nd article {
+    background-image: url(../img/bg.png);
+    margin: 0 5% 0;
+    padding: 3% 5%;
+    height: 100%;
+    background-color: #fff;
+    overflow: hidden;
+}
+.nd.active {
+    top: 0
+}
